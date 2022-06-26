@@ -27,14 +27,22 @@ main {
   padding: 70px 20px;
 }
 
+@keyframes myAnimation {
+  0% {
+    transform: translateX(-100px);
+  }
+}
+
 h1 {
   font-size: 25px;
   font-weight: 700;
+  animation: myAnimation 3s;
 }
 
 .heading-bio {
   font-size: 14px;
   padding-top: 20px;
+  animation: myAnimation 3s;
 }
 
 .tryIt-btn {
@@ -44,6 +52,10 @@ h1 {
   font-weight: 700;
   border: 1px solid hsl(248, 32%, 49%);
   box-shadow: 2px 3px 3px 0px hsla(249, 24%, 39%, 0.295);
+}
+
+.tryIt-btn:hover {
+  transform: scale(0.9);
 }
 
 .tryIt-btn b {
@@ -82,6 +94,10 @@ input {
   color: rgb(238, 236, 236);
   border: 1px solid hsl(154, 59%, 51%);
   box-shadow: 1px 2px 3px 0px hsl(154, 45%, 21%);
+}
+
+.claim-btn:hover {
+  transform: scale(0.9);
 }
 
 .last-ptag {
