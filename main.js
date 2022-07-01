@@ -17,7 +17,7 @@ form.addEventListener('submit',(event) => {
   NameValidation( 0, 'First name cannot be empty!');
   lastNameValidation( 1, 'Last name cannot be empty!');
   emailValidation( 2, 'Email doesn not seem to be valid!');
-  passwordValidation( 3, 'Password must be more than 5 characters!');
+  passwordValidation( 3, 'Password must be more than 8 characters!');
 });
 
 
@@ -67,7 +67,7 @@ function emailValidation(index, message) {
 function passwordValidation(index, message) {
   const passwordValue = password.value.trim();
 
-  if(passwordValue === '' || passwordValue.length < 5) {
+  if(passwordValue === '' || passwordValue.length < 8) {
     errorMessage[index].innerHTML = message;
     failureIcon[index].style.opacity = 1;
     successIcon[index].style.opacity = 0;
