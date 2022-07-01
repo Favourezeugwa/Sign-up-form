@@ -49,6 +49,7 @@ h1 {
 .tryIt-btn {
   background-color: hsl(248, 32%, 49%);
   margin-top: 70px;
+  width: 100%;
   padding: 15px 50px;
   font-weight: 700;
   border: 1px solid hsl(248, 32%, 49%);
@@ -98,8 +99,8 @@ form div input {
 form div i {
   position: absolute;
   padding: 16px 7px;
-  font-size: 18px;
-  color: hsl(250, 3%, 47%);
+  font-size: 16px;
+  color: hsl(0, 0%, 55%);
 }
 
 .failure-icon,
@@ -128,7 +129,8 @@ input:focus {
 
 .claim-btn {
   background-color: hsl(154, 59%, 51%);
-  margin: 15px 20px;
+  /* margin: 15px 15px; */
+  width: 100%;
   padding: 15px 30px;
   font-weight: 700;
   border-radius: 4px;
@@ -145,6 +147,7 @@ input:focus {
   color: hsl(246, 5%, 40%);
   font-size: 11px;
   padding: 0 40px;
+  margin-top: 20px;
 }
 
 .last-ptag span {
