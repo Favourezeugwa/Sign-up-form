@@ -7,7 +7,7 @@
 ### Screenshot
 
 ![](./images/desktop.snip.png)
-![](./images/mobile.snip.png)
+![](./images/mobile.snip.new.PNG)
 
 ### Links
 
