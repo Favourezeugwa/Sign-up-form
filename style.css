@@ -129,7 +129,6 @@ input:focus {
 
 .claim-btn {
   background-color: hsl(154, 59%, 51%);
-  /* margin: 15px 15px; */
   width: 100%;
   padding: 15px 30px;
   font-weight: 700;
