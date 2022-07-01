@@ -30,7 +30,7 @@ main {
 
 @keyframes myAnimation {
   0% {
-    transform: translateX(-100px);
+    transform: translateY(-100px);
   }
 }
 
@@ -171,6 +171,12 @@ input:focus {
     line-height: 1.2;
   }
 
+  @keyframes myAnimation {
+    0% {
+      transform: translateX(-100px);
+    }
+  }
+
   main {
     padding: 0;
     display: flex;
@@ -188,10 +194,12 @@ input:focus {
   h1 {
     padding: 0;
     font-size: 35px;
+    animation: myAnimation 3s;
   }
 
   .heading-bio {
     font-size: 13px;
+    animation: myAnimation 3s;
   }
 
   section {
