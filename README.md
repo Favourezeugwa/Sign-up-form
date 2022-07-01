@@ -1,4 +1,4 @@
-# Intro component with sign up form solution
+# Intro component with sign up form
 
 > This is a web page where users can enter the information required to access the learn to code by watching others website's services. The information collected is signup forms requires a First name, Last name, an email address, username, and a password.
 
