@@ -10,18 +10,7 @@ const successIcon = document.getElementsByClassName('success-icon')
 const failureIcon = document.getElementsByClassName('failure-icon')
 
 
-
-form.addEventListener('submit',(event) => {
-  event.preventDefault();
- 
-  NameValidation( 0, 'First name cannot be empty!');
-  lastNameValidation( 1, 'Last name cannot be empty!');
-  emailValidation( 2, 'Email doesn not seem to be valid!');
-  passwordValidation( 3, 'Password must be more than 8 characters!');
-});
-
-
-function NameValidation(index, message) {
+function nameValidation(index, message) {
   const firstNameValue = firstName.value.trim();
 
   if(firstNameValue === '' || null) {
@@ -78,7 +67,12 @@ function passwordValidation(index, message) {
   }
 }
 
-
-
-
+form.addEventListener('submit',(event) => {
+  event.preventDefault();
+ 
+  nameValidation( 0, 'First name cannot be empty!');
+  lastNameValidation( 1, 'Last name cannot be empty!');
+  emailValidation( 2, 'Email does not seem to be valid!');
+  passwordValidation( 3, 'Password must be more than 8 characters!');
+});
 
