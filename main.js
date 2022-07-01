@@ -1,40 +1,30 @@
-// const form = document.getElementById('form');
-// colast = document.getElementById('first-name');
-// const lastName = document.getElementById('last-name');
-// const password = document.getElementById('password');
-// const email = document.getElementById('email-address');
-// const claimButton = document.getElementsByClassName('claim-btn');
-// const errorMessage = document.getElementsByClassName('error');
+const form = document.getElementById('form');
+const firstName = document.getElementById('first-name');
+const lastName = document.getElementById('last-name');
+const password = document.getElementById('password');
+const email = document.getElementById('email-address');
 
+const errorMessage = document.getElementsByClassName('error');
+const claimButton = document.getElementsByClassName('claim-btn');
+const successIcon = document.getElementsByClassName('success-icon')
+const failureIcon = document.getElementsByClassName('failure-icon')
 
-const id = (id) => document.getElementById(id);
-
-const classes = (classes) => document.getElementsByClassName(classes);
-
-const form = id('form'),
-  firstName = id('first-name'),
-  lastName = id('last-name'),
-  password = id('password'),
-  email = id('email-address'),
-  errorMessage = classes('error'),
-  successIcon = classes('success-icon'),
-  failureIcon = classes('failure-icon'),
-  claimButton = classes('claim-btn');
 
 
 form.addEventListener('submit',(event) => {
   event.preventDefault();
  
-  logic(firstName, 0, 'First name cannot be empty!');
-  logic(lastName, 1, 'Last name cannot be empty!');
-  logic(email, 2, 'email cannot be empty!')
-  logic(password, 3, 'Password cannot be empty!');
-
+  NameValidation( 0, 'First name cannot be empty!');
+  lastNameValidation( 1, 'Last name cannot be empty!');
+  emailValidation( 2, 'Email doesn not seem to be valid!');
+  passwordValidation( 3, 'Password must be more than 5 characters!');
 });
 
 
-let logic = (id, index, message ) => {
-  if(id.value.trim() === '' || null) {
+function NameValidation(index, message) {
+  const firstNameValue = firstName.value.trim();
+
+  if(firstNameValue === '' || null) {
     errorMessage[index].innerHTML = message;
     failureIcon[index].style.opacity = 1;
     successIcon[index].style.opacity = 0;
@@ -45,14 +35,50 @@ let logic = (id, index, message ) => {
   }
 }
 
-function validate()  {
-  const email = document.getElementById('email-address').value;
-  const RegExp = /^([a-zA-Z0-9\._]+)@([a-zA-Z0-9])+.([a-z]+)(.[a-z]+)?$/
+function lastNameValidation(index, message) {
+  const lastNameValue = lastName.value.trim();
 
-  if(RegExp.text(email) ){
-    return true
+  if(lastNameValue === '' || null) {
+    errorMessage[index].innerHTML = message;
+    failureIcon[index].style.opacity = 1;
+    successIcon[index].style.opacity = 0;
   } else {
-    return false
+    errorMessage[index].innerHTML = '';
+    failureIcon[index].style.opacity = 0;
+    successIcon[index].style.opacity = 1;
   }
 }
+
+function emailValidation(index, message) {
+  const emailValue = email.value.trim();
+  const RegExp =/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+  if(emailValue.match(RegExp)) {
+    errorMessage[index].innerHTML = '';
+    failureIcon[index].style.opacity = 0;
+    successIcon[index].style.opacity = 1;
+  } else {
+    errorMessage[index].innerHTML = message;
+    failureIcon[index].style.opacity = 1;
+    successIcon[index].style.opacity = 0;
+  }
+}
+
+function passwordValidation(index, message) {
+  const passwordValue = password.value.trim();
+
+  if(passwordValue === '' || passwordValue.length < 5) {
+    errorMessage[index].innerHTML = message;
+    failureIcon[index].style.opacity = 1;
+    successIcon[index].style.opacity = 0;
+  } else {
+    errorMessage[index].innerHTML = '';
+    failureIcon[index].style.opacity = 0;
+    successIcon[index].style.opacity = 1;
+  }
+}
+
+
+
+
 
